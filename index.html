@@ -1,1 +1,30 @@
 <!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <title>웹카페-고정형 레이아웃</title>
+  <!-- 외부의 자원을 연결합니다 /href=어느만큼 떨어져있는지, 주변에것을 말합니다. -->
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+  <!-- nav를 스킵할 수 있는 정보를 제공합니다. -->
+  <!-- a태그만 inline이고 나머지는 block입니다. -->
+<div class="skip-nav"><a href="#">본문 바로가기</a></div>
+  <!-- {}는 text node가 됩니다 -->
+  <!-- header.header{header}+visual{visual} -->
+<header class="header">header</header>
+<div class="visual">visual</div>
+  <!-- $는 숫자n번을 알려주고 *는 곱하기를 의미합니다. -->
+<main class="main">
+  <div class="group group1">group1</div>
+  <div class="group group2">group2</div>
+  <div class="group group3">group3</div>
+</main>
+<div class="slogon">slogon</div>
+  <!-- .을 생략하면 division을 의미합니다. -->
+<footer class="footer">
+  <div class="footer-wrapper">footer</div>
+</footer>
+</body>
+</html>
+
