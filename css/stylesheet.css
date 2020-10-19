@@ -1,0 +1,29 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import url(./fontello.css);
+
+/* serif:바탕체(삐침) Sans-serif:돋움,고딕(삐침이 없음)입니다.
+Sans-serif: genery family,글꼴군을 의미합니다. */
+
+/* borwse마다 똑같은 font-service를 지원하지 않습니다. 
+700 : bold / 400: normal / 300: right/100: think
+글꼴 굵기로 웹폰트를 설정합니다. */
+
+/* 해당글꼴이 응답한 것을 알고싶다면 
+개발자도구에서 network>Font>새로고침해서 확인하세요.
+status가 200이면 올바르게 응답한 것입니다. */
+
+/* body = css boxmodel을 기본으로 body의 바깥쪽에는 margin이 존재합니다. 
+user agent = browser을 설명합니다. 
+X 브라우저마다 다를 수 있습니다 X */
+
+body{
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; 
+  
+}
+
+/* 스킵 내비게이션 : 존재하지 않는 것으로 나타냅니다.*/
+.skip-nav{
+  display: none;
+}
+
