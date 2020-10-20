@@ -42,6 +42,13 @@ body{
   /* #181818, #000은 검정색, #fff는 하얀색을 의미합니다. */
   color: #181818;
   background: #fff;
+  
+}
+
+/* 링크 스타일  */
+a{
+  color:inherit;
+  text-decoration: none;
 }
 
 /* 스킵 내비게이션 : 존재하지 않는 것으로 나타냅니다.*/
@@ -55,13 +62,51 @@ body{
   margin: 0 auto;
   /* auto margin을 사용하면 flex를 사용하지 않고 가운데정렬을 할 수 있습니다. */
 }
+/* 헤더 */
 .header{
   background: yellow;
+  position: relative;
+  border-radius: 0 0 15px 15px;
+  padding: 0 30px;
+  /* 왼쪽 시계방향으로 값이 주어집니다. */
 }
+
+/* 로고 */
+.logo{
+  position: absolute; 
+  margin :0;
+  top: 50px;
+  left: 65px;
+  /* position: absolute면, member부터 시작합니다. */
+  /* offset을 주지 않기 때문에 header안에 있는것첨 제자리에 존재합니다. */
+}
+
+/* 회원안내링크 목록 */
+/* flex는 member를 , float나 li는 inline-block으로 한다. */
+.member {
+  margin: 0;
+  padding-left: 0;
+  text-align: right;
+  list-style: none;
+  /* float을 사용할 때는 다른 방법은 없는지 생각해보자  */
+}
+
+.member.li{
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.member.a{
+  padding: 6px 0;
+  display: inline-block;
+  background-color: pink;
+}
+
 .visual {
   background: lime;
   /* 높이는 정하지 않는 것이 좋다. 들어가는 content에따라 달라지기 때문이다. */
   height: 120px;
+
 }
 
 .main {
