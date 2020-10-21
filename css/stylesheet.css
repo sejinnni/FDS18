@@ -220,7 +220,6 @@ a{
 .sub-menu li,
 .sub-menu a{
   display: inline-block;
-  padding: 8px 0;
   /* background-color: skyblue; */
   /* float: left; */
   /* 분홍색이 보이는 이유? : position:relative가 되거나 float가 되면 
@@ -229,6 +228,10 @@ a{
   > 억지로 width를 늘리는 것 (해결)  */
   /* inline-block 화 되었지만 부모의 공간이 부족하다 
   왜? 부모의 위치가 relative라서! */
+}
+.sub-menu a{
+  margin-right: 10px;
+  padding: 8px 0;
 }
 .sub-menu a::before{
   content: '\f192'; 
@@ -246,9 +249,9 @@ a{
   content: '\e800';
   /* a에 마우스를 올렸을 때 check으로 바뀐다  */
 }
-/* .menu-act .sub-menu{
+.menu-act .sub-menu{
   display: block;
-} */
+}
   /* display건드리지 않고 flex사용하지 않고 가로방향 배치해야한다. */
  
 .sub-menu1, 
