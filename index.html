@@ -3,30 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>웹카페-고정형 레이아웃</title>
-  <!-- 외부의 자원을 연결합니다 /href=어느만큼 떨어져있는지, 주변에것을 말합니다. -->
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
   <div class="skip-nav"><a href="#">본문 바로가기</a></div>
-  <!-- nav를 스킵할 수 있는 정보를 제공합니다. -->
-  <!-- a태그만 inline이고 나머지는 block입니다. -->
 
-  <!-- {}는 text node가 됩니다 -->
-  <!-- header.header{header}+visual{visual} -->
 <header class="header">
   <h1 class="logo"><a href="#"><img src="./images/logo.png" alt="web Cafe"></a></h1>
-  <!-- a, img가 inline이라서 한줄로 만들어진다  -->
-  <!-- alt(대체텍스트)는 이미지의 텍스트와 동일하게 써주세요. 붙여서 쓰지 말고!(c.d.b bank) -->
 
 <ul class="member">
   <li>
     <a href="#">홈</a>
-    <!-- :대신 한글 'ㅣ'를 넣으면 수평을 잘 잡을 수 있습니다. <span class="">:</span>-->
   </li>
   <li> 
-    <!-- 줄이 바꿔지면서 공백으로 (페이지에) 나타난다  -->
-    <!-- <li><a href="#">홈</a></li 
-      ><li>~~~~~~~~</li> : 닫히는 태그를 다음에 하자  -->
     <a href="#">로그인</a>
     <span class="divider" aria-hidden="true">ㅣ</span>
   </li>
@@ -43,18 +32,123 @@
     <a href="#">english</a>
   </li>
 </ul>
+
+<nav class="navigation">
+  <h2 class="a11y-hidden">메인 메뉴</h2>
+  <ul class="menu">
+    <li class="menu-item menu-act">
+      <!-- span은 키보드 포커스를 받을 수 없기 때문에 
+      tabindex="0"사용한 것입니다.  -->
+      <button type="button" class="menu-button">HTML에 대해</button>
+      <ul class="sub-menu sub-menu1">
+        <li>
+          <a href="#">HTML5 소개</a>
+        </li>
+        <li>
+          <a href="#">레퍼런스 소개</a>
+        </li>
+        <li>
+          <a href="#">활용예제</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item" tabindex="0">
+      <button type="button" class="menu-button">CSS에 대해</button>
+      <ul class="sub-menu sub-menu2">
+        <li>
+          <a href="#">CSS 소개</a>
+        </li>
+        <li>
+          <a href="#">CSS2 VS CSS3</a>
+        </li>
+        <li>
+          <a href="#">CSS 애니메이션</a>
+        </li>
+        <li>
+          <a href="#">CSS Framework</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item" tabindex="0">
+      <button type="button" class="menu-button">웹표준</button>
+      <ul class="sub-menu sub-menu3">
+        <li>
+          <a href="#">웹표준 이란?</a>
+        </li>
+        <li>
+          <a href="#">W3C</a>
+        </li>
+        <li>
+          <a href="#">HTML5의 현재와 미래</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item" tabindex="0">
+      <button type="button" class="menu-button">웹 접근성</button>
+      <ul class="sub-menu sub-menu4">
+        <li>
+          <a href="#">웹 접근성의 개요</a>
+        </li>
+        <li>
+          <a href="#">장애 환경의 이해</a>
+        </li>
+        <li>
+          <a href="#">장차법</a>
+        </li>
+        <li>
+          <a href="#">웹 접근성 품질마크</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item" tabindex="0">
+      <button type="button" class="menu-button">묻고 답하기</button>
+      <ul class="sub-menu sub-menu5">
+        <li>
+          <a href="#">묻고 답하기</a>
+        </li>
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+        <li>
+          <a href="#">1대1 질문</a>
+        </li>
+        <li>
+          <a href="#">웹표준</a>
+        </li>
+        <li>
+          <a href="#">웹 접근성</a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item" tabindex="0">
+      <button type="button" class="menu-button">자료실</button>
+      <ul class="sub-menu sub-menu6">
+        <li>
+          <a href="#">공개 자료실</a>
+        </li>
+        <li>
+          <a href="#">이미지 자료실</a>
+        </li>
+        <li>
+          <a href="#">웹표준 자료실</a>
+        </li>
+        <li>
+          <a href="#">웹 접근성 자료실</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </header>
 <div class="visual">visual</div>
-  <!-- $는 숫자n번을 알려주고 *는 곱하기를 의미합니다. -->
 <main class="main">
   <div class="group group1">group1</div>
   <div class="group group2">group2</div>
   <div class="group group3">group3</div>
-  <!-- <div class="clerfix"></div>
-  상자는 만들어졌지만 content가 없다 = 공간은 존재한다. -->
+
+
 </main>
 <div class="slogon">slogon</div>
-  <!-- .을 생략하면 division을 의미합니다. -->
 <footer class="footer">
   <div class="footer-wrapper">footer</div>
 </footer>
