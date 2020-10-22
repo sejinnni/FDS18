@@ -3,13 +3,15 @@
 @import url(./fontello.css);
 
 /* 숨김 제목 및 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden ,legend {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: 0;
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
+  clip:rect(0 0 0 0);
+  clip:rect(0,0,0,0);
 }
 
 body *,
