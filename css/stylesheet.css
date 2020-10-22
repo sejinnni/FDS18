@@ -196,9 +196,41 @@ a {
   }
 }
 .visual {
-  background: lime;
   height: 120px;
   position: relative;
+}
+
+.visual::before,
+.visual::after{
+content:"";
+position: absolute;
+top:0;
+left:0;
+width: 100%;
+height: 100%;
+background-repeat: no-repeat;
+/* animation-name: bgAni;
+animation-duration: 2000ms;
+animation-direction: alternate;
+animation-iteration-count: infinite; */
+animation: bgAni 2000ms alternate infinite ease-in-out;
+}
+@keyframes bgAni{
+  o%{opacity: 1;
+  }
+  100%{opacity: 0;
+  }
+}
+.visual::before{
+  background-image: url(./../images/ani_flower_01.png),
+                    url(./../images/ani_flower_02.png);
+  background-position: 0 -10px, 670px 0;
+}
+.visual::after{
+  background-image: url(./../images/ani_flower_03.png),
+  url(./../images/ani_flower_04.png);
+background-position: 300px 0px, 800px 0;
+animation-delay: 1000ms;
 }
 
 .visual-text{
@@ -208,9 +240,8 @@ a {
   font-family: Georgia, 'Times New Roman', Times, serif;
   animation-name: textAni;
   /* name과 duration은 필수 입니다. */
-  animation-duration: 30000ms;
+  animation-duration: 3000ms;
   animation-fill-mode: forwards;
-  background-color:blue;
 }
 .main {
   background: skyblue;
