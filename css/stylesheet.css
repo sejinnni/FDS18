@@ -2,328 +2,248 @@
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
 
-
-/* 숨김 제목 및 숨김 콘텐츠  */
-.a11y-hidden{ 
-  /* 화면에 안보이지만 완성하고 구성할 수 있다. */
-  /* background-color: blue; */
+/* 숨김 제목 및 숨김 콘텐츠 */
+.a11y-hidden {
   position: absolute;
-  /* w:h:0으로 만들면 가상커서가 적어도 크기가 있어야 초점이 가서 읽어줄 수 있는데 
-  크기가 없으면 읽어주지 않음. 
-
-  그렇지만 1px조차 화면에서 보이면 안되기 때문에 clip, clip-path를 사용한다. 
-  1Px 잘랐지만 보이지 않게 하는 것 (숨김 콘텐츠 영역에 추가함으로써 화면에 튀는 것을 막아준다)
-  => 숨김 콘텐츠 해결  */
   width: 1px;
   height: 1px;
   margin: 0;
-  overflow:hidden;
-  /* (x값 y값, ) */
+  overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
-   /* 글자만 칠해지면 inline , 한칸이 다 칠해지면 block  */
-  /* position : absolute 가 된 순간, block 요소 
-  offset을 주지 않으면 초기 값으로 존재하는데, absolute값을 메긴 이유는 
-  저 자리에서 변화를 주기위해서 이다.  */
-
-  /* top:-9999px;
-  화면에 글자가 보이지 않지만 스크린리더에는 잘들린다. 
-  좌표 값을 지정하는 것만으로 화면에 보이지 않는 숨김처리를 한 것이다.
-  브라우저 밖으로 보낸 것이지만 스크린에는 존재하기때문에 스크린 리더가 읽는 것 
-  >스크린리더가 읽으면서 스크롤 이동을 초래해서 실제 화면과의 혼란을 초래한다 (단점)*/
-
-  /* .offscreen
-  position: absolute;
-  top:-10000px;
-  3-5였는데 스크롤이 3-1로 이동하는 혼란 초래 (대한항공)
-  읽는 것은 순서대로, 하지만 스크롤 오류  */
-
-  /* offset을 조정하지 않고 top,left,bottom,right 움직이지 않고 그자리 고정  */
-  /* font-size: 0 ; 키보드로 접근할 수 없다 
-  opacity:0 ; : 가능하지만 초반에 mobile device에서 문제가 있었음 (모바일에서 읽지 못함) */
 }
 
-
-body *, 
-body *::before, 
-body *::after{
+body *,
+body *::before,
+body *::after {
   box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
-  
 }
-/* serif:바탕체(삐침) Sans-serif:돋움,고딕(삐침이 없음)입니다.
-Sans-serif: genery family,글꼴군을 의미합니다. */
 
-/* borwse마다 똑같은 font-service를 지원하지 않습니다. 
-700 : bold / 400: normal / 300: right/100: think
-글꼴 굵기로 웹폰트를 설정합니다. */
-
-/* 해당글꼴이 응답한 것을 알고싶다면 
-개발자도구에서 network>Font>새로고침해서 확인하세요.
-status가 200이면 올바르게 응답한 것입니다. */
-
-/* body = css box-model을 기본으로 body의 바깥쪽에는 margin이 존재합니다. 
-user agent = browser을 설명합니다. 
-X 브라우저마다 다를 수 있습니다 X */
-
-body{
-  font-family: 'Spoqa Han Sans', 'Sans-serif'; 
-  /* root를 기준으로 계산합니다. 그래서 글자크기 변화는 html font-size만 조정하면 됩니다. */
+body {
+  font-family: 'Spoqa Han Sans', 'Sans-serif';
   font-size: 1.4rem;
-  /* #RRGGBB, 0~fxo~f(16진수방식) < rgb(255,0,0,0.5) :RGB는투명도를 조절할 수 있습니다  */
-  /* #181818, #000은 검정색, #fff는 하얀색을 의미합니다. */
   color: #181818;
   background: #ccc;
-  
 }
 
-/* 링크 스타일  */
-a{
+/* 링크 스타일 */
+a {
   color: inherit;
   text-decoration: none;
 }
 
-/* 스킵 내비게이션 : 존재하지 않는 것으로 나타냅니다.*/
+/* 스킵 내비게이션 */
 .skip-nav {
   display: none;
 }
 
 /* 레이아웃 */
 .header,
-.visual, 
-.main, 
-.slogon{
+.visual,
+.main,
+.slogan {
   width: 940px;
-  margin: 0 auto;
-  /* auto margin을 사용하면 flex를 사용하지 않고 가운데정렬을 할 수 있습니다. */
+  margin: auto;
 }
+
 /* 헤더 */
-.header{
-  background: #fff;
+.header {
   position: relative;
+  background: #fff;
   border-radius: 0 0 15px 15px;
   padding: 0 30px;
-  /* 왼쪽 시계방향으로 값이 주어집니다. */
 }
 
-/* 로고 */
-.logo{
-  position: absolute; 
-  margin :0;
+/* 로고  */
+.logo {
+  position: absolute;
   top: 50px;
   left: 65px;
-  /* position: absolute면, member부터 시작합니다. */
-  /* offset을 주지 않기 때문에 header안에 있는것첨 제자리에 존재합니다. */
+  margin: 0;
 }
 
-/* 회원안내링크 목록 */
-/* flex는 member를 , float나 li는 inline-block으로 한다. */
+/* 안내 링크 목록 */
 .member {
   margin: 0;
   padding-left: 0;
-  /* ul tag자체가 padding, margin값을 가지고 있기 때문에 0값을 부여한 것   */
-  text-align: right;
   list-style: none;
-  /* float을 사용할 때는 다른 방법은 없는지 생각해보자  */
+  text-align: right;
 }
 
-.member li{
+.member li {
   display: inline-block;
   padding: 2px 0;
 }
 
-.member a{
+.member a {
   padding: 6px 0;
   display: inline-block;
-  background-color: pink;
 }
 
 /* 내비게이션 */
-.navigation{
+.navigation {
   padding-bottom: 35px;
 }
 
-/* 하위메뉴를 배치하기위해 header의 영역이 늘어난 것 처럼 보이게 만든다  */
-.menu{
-  background: linear-gradient(to bottom,
-   #efaf2f 0%,
-   #e55e24 35%,
-   #e55e24 35%,
-   #e55e24 70%,
-   #efaf2f 100%);
-  /* (기본 값 무너뜨리려고) */
-  margin: 10px 0 0 0; 
+.menu {
+  background: linear-gradient(
+    to bottom, 
+    #edaa2f 0%, 
+    #f2682e 35%, 
+    #f2682e 70%, 
+    #edaa2f 100%
+    );
+  border-top: 2px solid currentColor;
+  border-radius: 0 0 5px 5px;
+  margin: 10px 0 0 0;
   padding-left: 0;
   list-style: none;
-  /* (불릿기호 없애기 위해서 ) */
   height: 47px;
-  /* overflow: visual (기본 값) */
-  border-top:2px solid currentColor;
-  /* body가 border-top과 색상이 같을 때, body가 000되면 border-top도 그랬으면 좋겠어 = currentColor; */
-  border-radius: 0 0 5px 5px;
-  padding-left: 225px; 
+  padding-left: 220px;
 }
-
-.menu-item{
+.menu-item {
   position: relative;
-  /* 주석 하면 쓸 수 있는 가용범위 940인데 li기준으로 하면 display inline-block으로 
-  불가능 하구나  */
   float: left;
-
 }
-
-.menu-button{
+.menu-button {
   cursor: pointer;
   font-size: 1.6rem;
-  color:#fff ;
-  font-weight: 700px;
+  color: #fff;
+  font-weight: 700;
   background: transparent;
   line-height: 45px;
-  /* line-height값을 넣거나 display block을 넣거나 둘 중 하나만 해야 하는건가?
-  두개 다 같이 해야하는 가? */
+  display: block; 
   padding: 0 20px;
-  /* 25px를 주는 순간, 자리 부족해서 넘어감 > flex (nowrap탄생) */
-  display: block;
-  /* inline일때는 padding이 의도대로 들어가지 않기 떄문에  */
   border: 0;
   border-left: 2px solid rgba(255, 255, 255, 0.5);
-  /* border-bottom: 2px solid #000; */
-  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
-  /* offset이 얼마나 떨어져있는가에 대해 보임 
-  shadow도 많이 깔수 있다  */
+  text-shadow: 1px 0px 0 #000, 0px 1px 0 #000, -1px 0px 0  #000, 0px -1px 0  #000;
+
 }
-.menu-act .menu-button{
+.menu-act .menu-button {
   color: #ff0;
 }
-.menu-act .menu-button::after{
+.menu-act .menu-button::after { /* ? */
   content: "";
-  background: blueviolet;
   display: block;
   border-top: 2px solid #000;
- /* button안에 text가 존재함 */
 }
-.sub-menu{
-  margin: 0; 
+.sub-menu {
+  margin: 0;
   padding-left: 0;
   list-style: none;
-  position: absolute;
-  /* li. menu, nav에 position값 없으니까 header기준 */
-  /* background-color: pink; */
-  top:47px;
-  /* left:0; */
   display: none;
+  position: absolute;
+  top: 47px;
+  /* 줄바꿈을 못하게 합니다. */
   white-space: nowrap;
 }
-/* 반복되면 개발자들 싫어해 reset.css사용해서 markup 한다. */
 .sub-menu li,
-.sub-menu a{
+.sub-menu a {
   display: inline-block;
-  /* background-color: skyblue; */
-  /* float: left; */
-  /* 분홍색이 보이는 이유? : position:relative가 되거나 float가 되면 
-  독립적으로 변해서 자식요소를 데리고 간다  */
-  /* block에게  white-space 주면, block끼리 부딪히는 문제 
-  > 억지로 width를 늘리는 것 (해결)  */
-  /* inline-block 화 되었지만 부모의 공간이 부족하다 
-  왜? 부모의 위치가 relative라서! */
 }
-.sub-menu a{
-  margin-right: 10px;
+.sub-menu a {
   padding: 8px 0;
+  margin-right: 10px;
 }
-.sub-menu a::before{
-  content: '\f192'; 
+.sub-menu a::before {
+  content: '\f192';
   font-family: 'fontello';
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
-   
-  /* 값을 준다고 아이콘이 나오지 않음 그래서 폰트를 줘야한다  */
 }
-
 .sub-menu a:hover::before,
-.sub-menu a:focus::before{
+.sub-menu a:focus::before {
   content: '\e800';
-  /* a에 마우스를 올렸을 때 check으로 바뀐다  */
 }
-.menu-act .sub-menu{
+.menu-act .sub-menu {
   display: block;
 }
-  /* display건드리지 않고 flex사용하지 않고 가로방향 배치해야한다. */
- 
-.sub-menu1, 
-.sub-menu2,
-.sub-menu3{
-  left:0;
-  display: none;
+.sub-menu1, .sub-menu2, .sub-menu3 {
+  left: 0;
 }
-.sub-menu4,
-.sub-menu5,
-.sub-menu6{
+.sub-menu4, .sub-menu5, .sub-menu6 {
   right: 0;
-  display: none;
 }
+/* 텍스트 및 배경 애니메이션 - 비주얼 */
+@keyframes textAni{
+  0%{
+    font-size: 12px;
+    color: rgba(0,0,0,0);
+    /* margin-top:0;
+    margin-left: 0; */
+    /* padding-top:0;
+    padding-left:0; */
+    /* top:0;
+    left:0; */
+    transform: translate(0,0);
 
+  }
+  100%{
+    font-size: 24px;
+    color:rgba(0,0,0,1);
+    /* margin-top:75px;
+    margin-left: 400px;
+    padding-top: 75px;
+    padding-left: 400px; */
+    /* top: 75px;
+    left:400px; */
+    transform: translate(400px,75px);
+  }
+}
 .visual {
   background: lime;
-  /* 높이는 정하지 않는 것이 좋다. 들어가는 content에따라 달라지기 때문이다. */
   height: 120px;
-
+  position: relative;
 }
 
+.visual-text{
+  /* position: absolute; */
+  width: 500px;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  animation-name: textAni;
+  /* name과 duration은 필수 입니다. */
+  animation-duration: 30000ms;
+  animation-fill-mode: forwards;
+  background-color:blue;
+}
 .main {
   background: skyblue;
-  /* display: flex; */
-  /* flex-flow: row nowrap; */
-  padding: 30px 15px;  
+  padding: 30px 15px;
   overflow: hidden;
-  /* overflow < clearfix  : main영역에서 걸쳐 나가는 영역이 overflow는 보이지 않게 한다.  */
   min-height: 450px;
 }
 
-/* .clearfix{
-  clear: both;
-  /* 겹치지 않고 바깥으로 밀어냅니다.  */
-  /* float 높이만큼 늘어나기 때문에 강제로 margin이 부여된 것 처럼 보일 수 있습니다.  */
-  /* BFC: block formating context */
-
-/* .clearfix::after{
-  content: "";
-  /* clear: both; */
-  /* (clear는 박스모델이 block일 때만 사용할 수 있다 그래서 inline일 때는 무시된다.)
-  div를 사용하면 block이지만 content를 사용하면 inline이 됩니다  */
-  /* display: block; */ 
-   /* (table이라고 써도 block으로 처리된다) */
-  /* .clearfix::after > main요소에 드러난다  */
-  /* flex는 .clearfix도 하나의 박스로 인식한다. */
-
-
-.group{
+.group {
   margin: 0 15px;
   float: left;
 }
-.group1{
-background: blueviolet;
-width: 250px;
-/* linebox 기준으로 ;왼쪽으로  */
-}
-.group2{
-background: lightgreen;
-width: 380px;
 
+.group1 {
+  background: blueviolet;
+  width: 250px;
 }
-.group3{
-background: tomato;
-width: 190px;
 
+.group2 {
+  background: lightgreen;
+  width: 380px;
 }
-.slogon{
+
+.group3 {
+  background: tomato;
+  width: 190px;
+}
+
+.slogan {
   background: orange;
 }
-.footer{
+
+.footer {
   background: pink;
   width: 100%;
 }
