@@ -328,27 +328,80 @@ a {
   padding: 8px 0;
 }
 /* 유효성 검사 배너 */
-.validation-list{
+.validation-list {
   margin: 25px 0 0 0;
   list-style-type: none;
-  padding-left:0;
+  padding-left: 0;
 }
 
-.validation-list a{
+.validation-list a {
   display: block;
   border-radius: 20px;
   border: 1px solid #aaa;
   background: url(./images/validation_icon.png) no-repeat 25px 50% / 20px 20px,
-  linear-gradient(to bottom, #eee, #ccc);
-  padding: 8px 10px 10px 55px;
-  margin-top:10px;
+    linear-gradient(to bottom, #eee, #ccc);
+  padding: 8px 10px 8px 50px;
+  margin-top: 10px;
 }
 
 .validation-list a:hover,
-.validation-list a:focus{
-  color:#ff00;
+.validation-list a:focus {
+  color: #f00;
 }
-.slogon {
+/* 웹 관련 용어 */
+.term {
+  border: 1px solid #aaa;
+  background: linear-gradient(#ccc, #eee);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+.term-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.term-list {
+  margin: 15px 0 0 0;
+}
+.term-list > div {
+  overflow: hidden;
+}
+.term-list div:nth-child(even) {
+  margin-top: 15px;
+}
+.term-list-subject,
+.term-list-brief {
+  float: right;
+  width: 145px;
+}
+.term-list-subject {
+  color: #296897;
+}
+.term-list-thumbnail {
+  float: left;
+}
+.term-list-thumbnail img {
+  display: block;
+}
+.term-list-brief {
+  margin-top: 5px;
+  line-height: 1.5;
+}
+.term-list dd {
+  margin-left: 0;
+}
+
+.term-list div:nth-child(even) .term-list-subject,
+.term-list div:nth-child(even) .term-list-brief {
+  float: left;
+}
+.term-list div:nth-child(even) .term-list-thumbnail {
+  float: right;
+}
+
+.slogan {
   background: orange;
 }
 .footer {
