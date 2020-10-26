@@ -401,6 +401,42 @@ a {
   float: right;
 }
 
+/* 검색 폼 */
+.search-form{
+  background: #ccc linear-gradient(#ccc, #eee);
+  border: 1px solid #aaa;
+  border-bottom-color: #fff;
+  border-radius: 15px 15px 0 0;
+  padding: 15px 25px 10px;
+}
+.search-form fieldset{
+  border:0;
+  padding:0;
+  margin:0;
+}
+.search-form-container{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-form [name="search"]{
+  border:1px solid #aaa;
+  border-radius: 3px;
+  padding: 1px 1p 1px 0.5em;
+  height: 22px;
+  /* flex-grow: 1; */
+  /* margin: 0 5px; */
+  width: 190px;
+}
+.btn-search{
+  background-color: #333;
+  border: 1px solid #aaa;
+  color:#fff;
+  border-radius: 3px;
+  padding: 0 10px;
+  height: 22px;
+}
 .slogan {
   background: orange;
 }
