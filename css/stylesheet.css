@@ -400,7 +400,6 @@ a {
 .term-list div:nth-child(even) .term-list-thumbnail {
   float: right;
 }
-
 /* 검색 폼 */
 .search-form{
   background: #ccc linear-gradient(#ccc, #eee);
@@ -437,6 +436,7 @@ a {
   padding: 0 10px;
   height: 22px;
 }
+
 .slogan {
   background: orange;
 }
