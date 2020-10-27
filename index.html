@@ -207,17 +207,14 @@
       </div>
       <div class="group group2">
         <h2 class="a11y-hidden">검색</h2>
-        <form method="POST" action="https://formspree.io/seulbinim@gmail.com"
-         class="search-form">
+        <form class="search-form" method="POST" action="https://formspree.io/seulbinim@gmail.com">
           <fieldset>
             <legend>검색 폼</legend>
-            <!-- <label for="search" class="icon-search">자료검색</label> -->
-            <div class="search-form-container"><label>
-            <span class="icon-search"></span>자료검색</label>
-            <input type="search" id="search" name="search"
-            placeholder="검색어를 입력하세요" required>
-            <button class="btn-search" type="submit">검색
-            </button></div>
+            <div class="search-form-container">
+              <label for="search"><span class="icon-search"></span>자료검색</label>
+              <input type="search" id="search" name="search" required placeholder="검색어를 입력하세요.">
+              <button class="btn-search" type="submit">검색</button>
+            </div>
           </fieldset>
         </form>
         <div class="board">
@@ -231,53 +228,56 @@
                 <time datetime="2020-10-27T14:38:56">2020.10.27</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">W3C 사이트 리뉴얼 및 공지사항</a>
+                <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
                 <time datetime="2020-10-27T14:38:56">2020.10.27</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">KWCAG 2.1 소식</a>
-                <<time datetime="2020-10-27T14:38:56">2020.10.27</time>
-              </li>
-              <li>
-                <a href="#" class="icon-dot-circled">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+                <a href="#">KWCAG 2.1 소식</a>
                 <time datetime="2020-10-27T14:38:56">2020.10.27</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다. </a>
+                <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+                <time datetime="2020-10-27T14:38:56">2020.10.27</time>
+              </li>
+              <li>
+                <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
                 <time datetime="2020-10-27T14:38:56">2020.10.27</time>
               </li>
             </ul>
-            <a class="icon-more notice-plus"
-            aria-labelledby="noticeHeading" title="공지사항">더보기</a>
+            <a class="notice-more icon-plus" aria-labelledby="noticeHeading" title="공지사항">더보기</a>
           </section>
-  
           <section class="pds">
-            <h2 class="pds-heading" role="button" id="pdsHeading">자료실</h2>
+            <h2 class="pds-heading tab" id="pdsHeading">
+              <a href="#" role="button">자료실</a>
+            </h2>
             <ul class="pds-list">
               <li>
-                <a href="#" class="icon-dot-circled">디자인 사이트 링크 모음</a>
+                <a href="#">디자인 사이트 링크 모음</a>
                 <time datetime="2020-10-28T14:38:56">2020.10.28</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">웹 접근성 관련 자료 모음</a>
+                <a href="#">웹 접근성 관련 자료 모음</a>
                 <time datetime="2020-10-28T14:38:56">2020.10.28</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">제 샘플 응용해보기</a>
+                <a href="#">예제 샘플 응용해보기</a>
                 <time datetime="2020-10-28T14:38:56">2020.10.28</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">웹 접근성 향상을 위한 국가 표준 기술 가이드라인 </a>
+                <a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
                 <time datetime="2020-10-28T14:38:56">2020.10.28</time>
               </li>
               <li>
-                <a href="#" class="icon-dot-circled">로얄티 프리 이미지 자료</a>
+                <a href="#">로얄티 프리 이미지 자료</a>
                 <time datetime="2020-10-28T14:38:56">2020.10.28</time>
               </li>
-              <a href="#" class="icon-more pds-plus" aria-labelledby="pdsHeading" title="자료실">더보기</a>
             </ul>
+            <a class="pds-more icon-plus" aria-labelledby="pdsHeading" title="자료실">더보기</a>
           </section>
         </div>
+        <section class="news">
+          <h2 class="news-heading">새소식</h2>
+        </section>
       </div>
       <div class="group group3">group3</div>
     </main>
