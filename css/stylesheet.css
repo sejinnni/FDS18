@@ -422,7 +422,7 @@ a {
 .search-form [name="search"]{
   border:1px solid #aaa;
   border-radius: 3px;
-  padding: 1px 1p 1px 0.5em;
+  padding: 1px 1px 1px 0.5em;
   height: 22px;
   /* flex-grow: 1; */
   /* margin: 0 5px; */
@@ -436,129 +436,161 @@ a {
   padding: 0 10px;
   height: 22px;
 }
+
 /* 공지사항 및 자료실 */
-.board { 
+.board{
   position: relative;
-  height: 200px;
-  margin-top: 20px;
-  
+  margin-top:20px;
+  min-height: 200px;
 }
+
 .notice-list,
 .pds-list,
 .notice-more,
 .pds-more{
   display: none;
 }
+
 .is-active .notice-list,
 .is-active .pds-list,
 .is-active .notice-more,
 .is-active .pds-more{
   display: block;
-}
-/* .notice-heading,
-.pds-heading{
-  float: left;
-  margin: 0;
-} */
-.tab {
-  /* float: left; */
-  margin: 0;
-  position: absolute;
-  top:0;
-  /* border기준 */
+
 }
 .is-active .tab{
   z-index: 5;
 }
-
+.tab{
+  margin: 0;
+}
 .notice-heading{
-  left:0;
+  display: inline-block;
+  left: 0;
 }
 .pds-heading{
-  left: 83px; 
+  position: absolute;
+  top:0;
+  left: 84px;
 }
 .tab a{
-  display: block;
-  border-radius: 5px 5px 0 0;
+  background: #ccc linear-gradient(#ccc,#eee);
   border: 1px solid #aaa;
-  background: #ccc linear-gradient(#ccc, #eee);
-  color: #999;
+  border-radius: 5px 5px 0 0 ;
+  margin: 0;
   font-size: 1.4rem;
   font-weight: 400;
-  padding: 5px 15px;
-  /* defalut값을 생각 (오렌지 vs 그레이) */
+  padding: 10px 15px;
+  display: block;
 }
+
 .is-active .tab a{
-  color:#ed702d;
   border-color: #ed702d #ed702d #fff #ed702d;
+  color:#ed702d;
   background: #fff;
-  /* background-color로 바꾸면 안됌 */
 }
 
 .notice-list,
 .pds-list{
-  /* 공동 이름을 사용하는 것이 편리 */
   list-style-type: none;
   padding-left: 0;
-  margin: 0;
-   /* 초기화 시켜서 공지사항 목록의 크기 확인 */
-  /* position: absolute;  */
-  /* left: 0;
-  top: 45px; */
+  margin:0;
+  padding: 10px;
 
-  /* position:static;상태  */
-  padding-top: 45px;
-  width: 100%;
-  min-height: 170px;
-  
 }
-
 .notice-list li,
 .pds-list li{
   display: flex;
   flex-flow: row nowrap;
   margin-bottom: 10px;
-  
 }
 
 .notice-list a,
 .pds-list a{
-  /* flex-grow: 1; */
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  width:280px;
+  flex-grow: 1;
 }
-
+.icon-plus::before{
+  color: hsla(110,  50%, 30%, 1);
+}
 .notice-more,
 .pds-more{
-  position: absolute;
+  position:absolute;
   top:-8px;
   right: -8px;
   padding: 8px;
-  /* 여백을 추가함으로써 글자가 밑으로 내려온 것 같다. 
-  여백을 추가했기 때문에 top, right값 변형 
-  사용자고려해서 넓이를 건드린 것이다.*/
 }
 
-/* +의 색을 변화하려고 할 때, 
-  여기에 바로 글자 색을 주면 '더보기'글자 까지 색이 변화한다.
-  더보기 앞에 있기 때문에 ::before */
-.notice-more::before,
-.pds-more::before{
-  color: hsla(110, 50%, 30%, 1);
-  /* 무지개색 (원 차트에서 시계방향) : 
-  green> 90도에서 약간 벗어났으니 110도 겠구나
-  16진수, 10진수는 인간이 볼 때 결과값을 알 수 없지만 
-  hsla를 사용하면 인간이 읽기 가장 쉬운 코드  
-  (색의 각도 채도 명도) */
-
-  /* 전경색과 배경색의 명도대비 (WCAG)
-  -single 'A'
-  -double 'AA' : 4.5:1 준수 (배경색이 #fff면, 전경색 #767676)
-  -triple 'AAA' */
+/* 새소식 */
+.news{
+  /* background: yellow; */
+  margin-top:20px;
+  position: relative;
 }
+.news::before{
+  content:"";
+  position: absolute;
+  top:35px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc linear-gradient(to right, #ccc, #fff);
+}
+.news-heading{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color:#ed702d;
+  margin: 0;
+}
+.news-article{
+  /* background: pink; */
+  margin-top:35px;
+}
+.news-article-link{
+  display: grid;
+  /* background: skyblue; */
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 'thumbnail subject' 'thumbnail date' 'thumbnail brief';
+}
+.news-article-subject{
+  /* background: lime; */
+  margin: 0 0 5px 0;
+  grid-area: subject;
+  font-size: 1.5rem;
+}
+.news-article-date{
+  grid-area: date;
+}
+.news-article-brief{
+  /* background: silver; */
+  margin: 10px 0 0;
+  grid-area: brief;
+  line-height: 1.5;
+}
+.news-article-thumbnail{
+  /* background: tomato; */
+  margin:0;
+  grid-area: thumbnail;
+}
+.news-article-thumbnail img{
+  box-shadow: 0 15px 15px 0px #aaa;
 
+}
+.news-article-thumbnail figcaption{
+  /* background-color: pink; */
+  margin-top: 15px;
+  margin-right: 18px;
+  text-align:center;
+}
+.news-more{
+  position:absolute;
+  padding: 8px;
+  top:-8px;
+  right:-8px;
+}
+.news-more::before{
+  color: hsla(110,  50%, 30%, 1);
+}
 .slogan {
   background: orange;
 }
