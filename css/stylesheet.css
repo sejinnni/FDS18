@@ -672,21 +672,22 @@ a {
   margin-top: 20px;
 }
 .favorite-list {
-
   margin: 10px 0 0 0;
   padding-left: 0;
   list-style: none;
 }
 .favorite-list li {
-
+  position: relative;
   margin-top: 8px;
   counter-increment: number;
-  position: relative;
   /* display: flex;
   flex-flow: row nowrap;
   align-items: center; */
 }
 .favorite-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
   content: counter(number);
   color: #fff;
   font-size: 1.2rem;
@@ -695,20 +696,19 @@ a {
   margin-right: 5px;
   background-color: #999;
   border-radius: 2px;
-  position: absolute;
-  left: 0;
-  top:50%;
-  margin-top: -9px;
 }
 .favorite-list a {
-  margin:0 10px 0 25px;
+  margin: 0 10px 0 20px;
   display: block;
   /* flex-grow: 1; */
-  
 }
 .up,
 .stop,
 .down {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -5px;
   /* display: inline-block; */
   font-style: normal;
   width: 9px;
@@ -717,10 +717,6 @@ a {
   overflow: hidden;
   background-image: url(./images/rank.png);
   background-repeat: no-repeat;
-  position: absolute;
-  right:0;
-  top:0;
-  
 }
 .up {
   background-position: 0 0;
