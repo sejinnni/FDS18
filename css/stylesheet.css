@@ -27,7 +27,7 @@ body {
   font-family: 'Spoqa Han Sans', 'Sans-serif';
   font-size: 1.4rem;
   color: #181818;
-  background: #ccc 
+  background: url(./images/bg_flower.png) no-repeat 50% 0, #ccc 
   linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
 }
 /* 링크 스타일 */
@@ -36,10 +36,23 @@ a {
   text-decoration: none;
 }
 /* 스킵 내비게이션 */
-.skip-nav {
-  display: none;
+.skip-nav a{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 0;
+  overflow:hidden;
+  background-color: #000;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  z-index: 10;
 }
-
+.skip-nav a:focus{
+  height: auto;
+  padding: 10px 0;
+}
 /* 레이아웃 */
 .header,
 .visual,
@@ -231,6 +244,7 @@ a {
   padding: 30px 15px;
   overflow: hidden;
   min-height: 450px;
+  border-radius: 15px 15px 0 0;
 }
 .group {
   margin: 0 15px;
@@ -776,7 +790,54 @@ a {
   content: "";
   /* 이미 안에 before,after가 들어가있기 때문에 (기본값) */
 }
+/* 푸터 */
 .footer {
   background: #ccc 
   linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
+}
+.footer-inner{
+  padding: 15px 100px 15px 180px;
+  position: relative;
+
+}
+/* 푸터 로고 */
+.footer-logo{
+  position: absolute;
+  top:35px;
+  left:35px;
+}
+/* 가이드 링크 목록 */
+.guide-list{
+  margin: 0;
+  padding: 2px 0 0 38spx;
+  list-style: none;
+  background:#7b8385;
+  color:#fff;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.guide-list li{
+  float: left;
+  margin: 0 5px;
+}
+.guide-list a{
+  display: block;
+  padding: 8px 10px;
+}
+/* 주소 및 저작권 정보 */
+.address{
+  font-style: normal;
+  margin:10px 0;
+}
+.address span{
+  margin-right: 15px;
+}
+.copyright{
+  font-size: 1.4rem;
+}
+/* HTML5 & CSS3 로고 */
+.badge{
+  position: absolute;
+  top:15px;
+  right: 0;
 }
